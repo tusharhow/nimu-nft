@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
                     child: Text(
                       'SoNFT',
                       style: TextStyle(
-                          color: Colors.green,
+                          color: Colors.black,
                           fontSize: 35,
                           fontWeight: FontWeight.bold),
                     ),
@@ -37,54 +37,42 @@ class HomePage extends StatelessWidget {
               height: 25,
             ),
             Expanded(
-              child: Column(
-                children: [
-                  Categories(),
-                  SizedBox(
-                    height: 15,
+                child: Column(
+              children: [
+                Categories(),
+                Container(
+                  height: 320,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(65),
+                    color: Colors.amber,
+                    image: DecorationImage(
+                      image: AssetImage('images/img.png'),
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  Stack(
-                    children: [
-                      Container(
-                        height: 300,
-                        width: 200,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(60),
-                          color: Colors.amber,
-                        ),
-                        child: Container(
-                          width: 10,
-                          height: 10,
-                          child: CustomPaint(
-                            painter: CirclePainter(),
-                          ),
-                        ),
-                      ),
-                    ],
-                  )
-                ],
-              ),
-            ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  'Series One x Weary |||',
+                  style: TextStyle(
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Spacer(),
+                Spacer(),
+                Spacer(),
+                Row(
+                  children: [],
+                ),
+              ],
+            )),
           ],
         ),
       ),
     );
   }
-}
-
-class CirclePainter extends CustomPainter {
-  final _paint = Paint()
-    ..color = Colors.yellow
-    ..style = PaintingStyle.fill;
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawOval(
-      Rect.fromLTWH(0, 0, size.width / 2, size.height / 3),
-      _paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
