@@ -15,7 +15,7 @@ class _CategoriesState extends State<Categories> {
     'Games',
     'Sports',
   ];
-  int selectedindex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
